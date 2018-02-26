@@ -1,7 +1,7 @@
 var onoff = require('onoff');
 
 var Gpio = onoff.Gpio,
-	led = new Gpio(6, 'out'), interval;
+	led = new Gpio(4, 'out'), interval;
 
 
 interval = setInterval(function () {
@@ -9,7 +9,7 @@ interval = setInterval(function () {
 	led.write(value, function() {
 		console.log("Changed LED state to: " + value);
 	});
-}, 2000);
+}, 20000);
 
 process.on('SIGINT', function () {
 	clearInterval(interval);
