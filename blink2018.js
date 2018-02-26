@@ -4,7 +4,7 @@ var Gpio = onoff.Gpio,
 	led = new Gpio(4, 'out'), interval;
 
 
-interval = setinterval(function () {
+interval = setInterval(function () {
 	var value = (led.readSync() + 1) % 2;
 	led.write(value, function() {
 		console.log("Changed LED state to: " + value);
